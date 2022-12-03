@@ -14,6 +14,39 @@ router.post('/', async(req, res) => {
     try {
         // simpan data 
         const mahasiswa = await mahasiswaPost.save()
+        // response (data yang sebelumnya disimpan akan ditampilkan pada response)
+        res.json(mahasiswa)
+    } 
+    // Response error
+    catch (error) {
+        res.json({message: error})
+    }
+})
+
+// Read data(method get)
+router.get('/', async(req, res) => {
+    try{
+        const mahasiswa = await Mahasiswa.find()
+        res.json(mahasiswa)
+    }
+    catch (error){
+        res.json({
+            message: error
+        })
+    }
+})
+
+// Update 
+router.put('/:mahasiswaId', async(req, res) => {
+    // tampung input mahasiswa 
+    const data = {
+        nama: req.body.nama,
+        alamat: req.body.alamat
+    }
+
+    try {
+        // update data 
+        const mahasiswa = await Mahasiswa.updateOne({_id: req.params.mahasiswaId}, data)
         // response
         res.json(mahasiswa)
     } catch (error) {
