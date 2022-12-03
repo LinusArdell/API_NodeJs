@@ -1,14 +1,11 @@
-// (4) Buat Schema Mahasiswa
 const mongoose = require('mongoose')
-
 const MahasiswaSchema = mongoose.Schema({
-    // Buat Schema data
     nama: {
-        type: String,
+        type:String,
         required: true
     },
-    alamat: {
-        type: String,
+    alamat:{
+        type:String,
         required: true
     },
     createdAt: {
