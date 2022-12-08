@@ -54,4 +54,18 @@ router.put('/:mahasiswaId', async(req, res) => {
     }
 })
 
+// Method Delete
+router.delete('/:mahasiswaID', async(req, res) => {
+    try {
+        const mahasiswa = await Mahasiswa.deleteOne({_id: req.params.mahasiswaID})
+        res.json(mahasiswa)
+    } catch (error) {
+        res.jsonmessage({
+            message : error
+        })
+    }
+})
+
 module.exports = router
+
+// Router digunakan untuk mengakses alamat data pada server

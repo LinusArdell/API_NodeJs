@@ -15,3 +15,5 @@ const MahasiswaSchema = mongoose.Schema({
 })
 
 module.exports = mongoose.model('Mahasiswa', MahasiswaSchema)
+
+//Model digunakan untuk menyimpan data API ke mongoDB
