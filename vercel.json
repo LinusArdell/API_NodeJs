@@ -17,7 +17,7 @@
          },
          {
             "key": "Access-Control-Allow-Origin",
-            "value": "*"
+            "value": "informatika"
          },
          {
             "key": "Access-Control-Allow-Methods",
